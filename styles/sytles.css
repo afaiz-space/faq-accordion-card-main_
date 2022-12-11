@@ -1,0 +1,130 @@
+:root {
+  /* background-color*/
+  --Soft-violet: hsl(273, 75%, 66%);
+  --Soft-blue: hsl(240, 73%, 65%);
+
+  /* Text */
+  --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --Dark-grayish-blue: hsl(240, 6%, 50%);
+  --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --Soft-red: hsl(14, 88%, 65%);
+
+  /* Dividers */
+  --Light-grayish-blue: hsl(240, 5%, 91%);
+
+  --img-h: calc(100vh-50%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 2px solid red; */
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--Soft-violet), var(--Soft-blue));
+}
+.container {
+  width: 50rem;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+h1 {
+  font-size: 24px;
+}
+.child1 {
+  width: 50%;
+  
+  background: url("../images/bg-pattern-desktop.svg") -19rem / 38rem no-repeat,
+    url("../images/illustration-woman-online-desktop.svg") -4rem / 24rem no-repeat;
+}
+
+.box {
+  transform: translate(-113px, 159px);
+}
+.mobile {
+  display: none;
+}
+.child2 {
+  width: 50%;
+  padding: 2rem;
+}
+.accordion {
+  width: 100%;
+
+  padding: 12px 0;
+  margin: 12px 0;
+
+  text-align: left;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--Very-dark-grayish-blue);
+  border: none;
+  outline: none;
+
+  transition: 0.4s;
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion:hover {
+  color: var(--Soft-red);
+}
+.panel {
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border-bottom: 1px solid var(--Light-grayish-blue);
+}
+p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: var(--Dark-grayish-blue);
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 90%;
+    margin-top: 20%;
+    flex-direction: column;
+  }
+  .child1 {
+    width: 100%;
+
+    background: none;
+    position: relative;
+  }
+  .child2 {
+    width: 100%;
+    padding: 9%;
+  }
+  h1 {
+    text-align: center;
+  }
+  .box {
+    display: none;
+  }
+  .mobile {
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+  }
+  .woman {
+    position: absolute;
+    top: -100%;
+    left: 25%;
+  }
+}
